@@ -1,0 +1,39 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.sidebar{
+
+
+    &__contenido{
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        align-items: center;
+        background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, v.$secundario 50%, v.$secundario 100%), url(/build/img/mapa.avif);
+        color: white;
+        padding: 2rem;
+        background-size: 100%;
+    }
+
+    &__imagen{
+        width: 100%;
+    }
+
+    &__informacion{
+        grid-row: 2 / 3;
+    }
+
+    &__heading{
+        text-transform: capitalize;
+        font-weight: 700;
+
+    }
+
+    &__meta{
+        color: white;
+        font-family: v.$fuentePrincipal;
+    }
+
+    &__meta--negrita{
+        font-weight: 900;
+    }
+}
