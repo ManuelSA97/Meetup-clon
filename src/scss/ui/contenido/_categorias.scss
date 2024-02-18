@@ -10,7 +10,8 @@
     }
 
     &__grid{
-        padding: 2rem;
+        margin-top: 5rem;
+        padding: 0 2rem;
 
         @include m.tablet { 
             padding: 10rem;
