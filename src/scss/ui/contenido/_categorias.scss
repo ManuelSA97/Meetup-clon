@@ -1,0 +1,58 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.categorias{
+    background-color: v.$grisClaro;
+    padding-top: 5rem;
+
+    &__heading{
+        @include m.heading;
+    }
+
+    &__grid{
+        padding: 2rem;
+
+        @include m.tablet { 
+            padding: 10rem;
+        }
+        @include m.grid(1, 4rem);
+        @include m.tablet { 
+            @include m.grid(2, 2rem);
+        }
+        @include m.desktop { 
+            @include m.grid(3, 2rem);
+        }
+    }
+}
+
+.categoria{
+    
+
+    &__contenido{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+
+
+    &__imagen{
+        aspect-ratio: 10 / 6;
+        background-size: cover;
+        background-size: auto 150%;
+    }
+
+    @for $i from 1 through 12 {
+        $imagen: '../img/categoria_' + $i + '.avif';
+        &:nth-child(#{$i}) &__imagen{
+            background-image: url($imagen);
+        }
+    }
+
+    &__nombre{
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin: 0;
+        padding-top: 2rem;
+    }
+}
